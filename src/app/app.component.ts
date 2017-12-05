@@ -17,11 +17,11 @@ export class AppComponent {
     this.hostPages = [{
       name: 'system',
       isSelected: true,
-      text: ''
+      text: '123'
     }, {
       name: 'page1',
       isSelected: false,
-      text: ''
+      text: '456'
     }];
     this.current = this.hostPages[0];
   }
