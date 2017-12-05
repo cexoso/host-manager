@@ -1,3 +1,8 @@
-<input type="text" [(ngModel)]="xx">
-{{xx}}
-<app-textfield [(xx)]="xx"></app-textfield>
+{{hostPages | json}}
+<ul>
+    <li *ngFor="let hostPage of hostPages" [class.isSelected]="hostPage === current" (click)="changeCurrent(hostPage)">
+        {{hostPage.name}}
+        <input type="checkbox" [(ngModel)]="hostPage.isSelected">
+    </li>
+</ul>
+<app-textfield [(content)]="current.text"></app-textfield>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import HostPage from './hostPage';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  hostPages: HostPage[];
+  current: HostPage;
+  changeCurrent(hostPage: HostPage) {
+    this.current = hostPage;
+  }
+  constructor() {
+    this.hostPages = [{
+      name: 'system',
+      isSelected: true,
+      text: ''
+    }, {
+      name: 'page1',
+      isSelected: false,
+      text: ''
+    }];
+    this.current = this.hostPages[0];
+  }
 }

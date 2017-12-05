@@ -8,14 +8,14 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./textfield.component.css']
 })
 export class TextfieldComponent {
-  @Input() xx;
-  @Output() xxChange: EventEmitter<string>;
+  @Input() content;
+  @Output() contentChange: EventEmitter<string>;
   myCtrl;
   constructor() {
-    this.xxChange = new EventEmitter();
+    this.contentChange = new EventEmitter();
     this.myCtrl = new FormControl();
     this.myCtrl.valueChanges.subscribe(
-      (data) => this.xxChange.next(data)
+      (data) => this.contentChange.next(data)
     );
   }
 }
